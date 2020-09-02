@@ -1,0 +1,6 @@
+- name : Install all bugbounty tools
+  hosts: all
+
+- import_playbook: common.yml
+- import_playbook: tools.yml
+

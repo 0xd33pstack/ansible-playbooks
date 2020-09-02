@@ -1,0 +1,16 @@
+---
+- name: "Install utilities"
+  hosts: all
+  
+  tasks:
+    - name: "Install jq"
+      become: yes
+      apt: name=jq update_cache=yes state=latest
+      ignore_errors: yes
+      tags: jq
+
+    - name: "Install git"
+      become: yes
+      apt: name=git update_cache=yes state=latest
+      ignore_errors: yes
+      tags: git

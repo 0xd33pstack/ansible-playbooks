@@ -1,0 +1,16 @@
+---
+- name : Install common tools
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install nodejs
+      import_role:
+        name: geerlingguy.nodejs
+      ignore_errors: yes
+      tags: nodejs
+
+    - name: Install go
+      import_role:
+        name: fubarhouse.golang
+      ignore_errors: yes
+      tags: go
